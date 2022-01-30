@@ -16,5 +16,10 @@ public class ComposePage extends BasePO{
     @FindBy(id = "send")
     private WebElement sendIPF;
 
-    public ComposePage typeRecipient(String recipient)
+    public ComposePage typeRecipient(String recipient){
+        toIPF.sendKeys(recipient);
+        return this;
+    }
+
+
 }
