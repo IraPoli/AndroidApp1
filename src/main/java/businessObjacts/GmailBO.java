@@ -1,7 +1,9 @@
 package businessObjacts;
 
 import pageObject.ComposePage;
+import pageObject.IncomeLetterPage;
 import pageObject.InitialPage;
+import pageObject.SentLettersPage;
 
 public class GmailBO {
     private final InitialPage initialPage;

@@ -1,6 +1,8 @@
+import businessObjacts.GmailBO;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
+import utils.AndroidDriverSingleton;
 
 
 import static utils.DateUtil.getSystemCurrentDate;
@@ -23,7 +25,7 @@ public class GmailTest {
 
     @AfterSuite
     public  void quitDriver(){
-        // AndroidDriverSingleton.quitDriver();
+         AndroidDriverSingleton.quitDriver();
 
     }
 }
