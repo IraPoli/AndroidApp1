@@ -24,7 +24,7 @@ public class GmailBO {
         return this;
     }
 
-    public GmailBO sentLetter(String recipient, String body){
+    public GmailBO sentLetter(String recipient, String subject, String body){
         incomeLetterPage.clickComposeBIN();
         composePage.typeRecipient(recipient)
                 .typeSubject(subject)

@@ -14,10 +14,25 @@ public class ComposePage extends BasePO{
     private WebElement letterIPF;
 
     @FindBy(id = "send")
-    private WebElement sendIPF;
+    private WebElement sendBIN;
 
     public ComposePage typeRecipient(String recipient){
         toIPF.sendKeys(recipient);
+        return this;
+    }
+
+    public ComposePage typeSubject(String subject){
+        subjectIPF.sendKeys(subject);
+        return this;
+    }
+
+    public ComposePage typeLetter(String letter){
+        letterIPF.sendKeys(letter);
+        return this;
+    }
+
+    public ComposePage clickSend(){
+        sendBIN.click();
         return this;
     }
 
