@@ -32,6 +32,7 @@ public class GmailBO {
                 .typeSubject(subject)
                 .typeLetter(body)
                 .clickSend();
+        return this;
     }
 
     public GmailBO openSentLetters(){

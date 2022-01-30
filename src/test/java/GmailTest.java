@@ -17,7 +17,7 @@ public class GmailTest {
 
     @Test
     public void testIsLetterSent(){
-        gmaiolBO.skipInitialPage().sendLetter(recipient,subject,body).openSentLetters();
+        gmaiolBO.skipInitialPage().sentLetter(recipient,subject,body).openSentLetters();
 
         Assert.assertTrue(gmaiolBO.isLetterSent(subject));
     }
