@@ -15,7 +15,7 @@ public class InitialPage extends BasePO {
     private WebElement takeMeToGmailBIN;
 
     public InitialPage clickGoItBIN(){
-        takeMeToGmailBIN.click();
+        goItGmailBIN.click();
         return this;
     }
 

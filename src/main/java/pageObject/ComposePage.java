@@ -3,9 +3,13 @@ package pageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class ComposePage extends BasePO{
-    @FindBy(id = "to")
-    private WebElement toIPF;
+
+  //*[@class="android.widget.EditText"]
+    @FindBy(xpath = "//*[@class='android.widget.EditText']")
+    private List<WebElement> ListToIPF;
 
     @FindBy(id = "subject")
     private WebElement subjectIPF;
@@ -17,7 +21,7 @@ public class ComposePage extends BasePO{
     private WebElement sendBIN;
 
     public ComposePage typeRecipient(String recipient){
-        toIPF.sendKeys(recipient);
+        ListToIPF.get(0).sendKeys(recipient);
         return this;
     }
 
