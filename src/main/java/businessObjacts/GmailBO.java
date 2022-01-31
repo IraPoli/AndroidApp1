@@ -30,9 +30,10 @@ public class GmailBO {
     public GmailBO sentLetter(String recipient, String subject, String body){
         incomeLetterPage.clickComposeBIN();
         composePage.clickGotItButton()
-                .typeRecipient(recipient)
+              //  .typeRecipient(recipient)
                 .typeSubject(subject)
-                .typeLetter(body)
+            //    .typeLetter(body)
+                .typeRecipient(recipient)
                 .clickSend();
         return this;
     }
