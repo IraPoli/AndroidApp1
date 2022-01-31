@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,13 +21,24 @@ public class ComposePage extends BasePO{
     @FindBy(id = "send")
     private WebElement sendBIN;
 
+
+    @FindBy(xpath ="//*[@text ='Got it']")
+    private WebElement gotItBTN;
+
+    public ComposePage clickGotItButton(){
+      gotItBTN.click();
+        return this;
+    }
+
     public ComposePage typeRecipient(String recipient){
         ListToIPF.get(0).sendKeys(recipient);
+       // ListToIPF.get(0).sendKeys(Keys.ENTER);
         return this;
     }
 
     public ComposePage typeSubject(String subject){
         subjectIPF.sendKeys(subject);
+
         return this;
     }
 

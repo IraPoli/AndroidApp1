@@ -22,13 +22,15 @@ public class GmailBO {
 
     public GmailBO skipInitialPage(){
         initialPage.clickGoItBIN()
-                    .clickTakeMeToGmailBIN();
+                    .clickTakeMeToGmailBIN()
+                    .clickGotItBIN();
         return this;
     }
 
     public GmailBO sentLetter(String recipient, String subject, String body){
         incomeLetterPage.clickComposeBIN();
-        composePage.typeRecipient(recipient)
+        composePage.clickGotItButton()
+                .typeRecipient(recipient)
                 .typeSubject(subject)
                 .typeLetter(body)
                 .clickSend();

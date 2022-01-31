@@ -14,6 +14,9 @@ public class InitialPage extends BasePO {
     @FindBy(id = "action_done")
     private WebElement takeMeToGmailBIN;
 
+    @FindBy(id = "next_button")
+    private WebElement gotItBIN;
+
     public InitialPage clickGoItBIN(){
         goItGmailBIN.click();
         return this;
@@ -21,6 +24,11 @@ public class InitialPage extends BasePO {
 
     public InitialPage clickTakeMeToGmailBIN(){
         takeMeToGmailBIN.click();
+        return this;
+    }
+
+    public InitialPage clickGotItBIN(){
+        gotItBIN.click();
         return this;
     }
 
