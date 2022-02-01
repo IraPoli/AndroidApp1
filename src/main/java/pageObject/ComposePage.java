@@ -36,8 +36,7 @@ public class ComposePage extends BasePO {
 
     public ComposePage typeRecipient(String recipient) {
         ListToIPF.get(0).sendKeys(recipient);
-        //  act.doubleClick(editText).perform();
-        //  editText.sendKeys(Keys.ENTER);
+
         return this;
     }
 
