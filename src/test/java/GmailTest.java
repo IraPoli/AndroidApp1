@@ -9,23 +9,26 @@ import static utils.DateUtil.getSystemCurrentDate;
 
 public class GmailTest {
 
-    private final GmailBO gmaiolBO = new GmailBO();
+    private final GmailBO gmailBO = new GmailBO();
 
     private final String recipient = "LevPolArt@gmail.com";
     private final String subject = "Subject test " + getSystemCurrentDate();
-    private final String body = "Text body test";
+
 
     @Test
-    public void testIsLetterSent(){
-        gmaiolBO.skipInitialPage().sentLetter(recipient,subject,body).openSentLetters();
+    public void testIsLetterSent() {
+        gmailBO.skipInitialPage().sentLetter(recipient, subject).openSentLetters();
+        Assert.assertTrue(gmailBO.isLetterInSent(subject));
+        Assert.assertTrue(gmailBO.isOneNewLetter());
+        gmailBO.openLetter(subject).deleteOpenedLetter();
+        Assert.assertFalse(gmailBO.isLetterInSent(subject));
 
-        Assert.assertTrue(gmaiolBO.isLetterSent(subject));
     }
 
 
     @AfterSuite
-    public  void quitDriver(){
-         AndroidDriverSingleton.quitDriver();
+    public void quitDriver() {
+        AndroidDriverSingleton.quitDriver();
 
     }
 }

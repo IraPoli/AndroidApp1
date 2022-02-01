@@ -2,29 +2,27 @@ package pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import utils.AndroidDriverSingleton;
 
-public class SentLettersPage extends BasePO{
+public class SentLettersPage extends BasePO {
 
 
-    public boolean isSentLetterDisplayed(String subject){
+    public boolean isSentLetterDisplayed(String subject) {
         String letterSubject = String.format("//android.view.ViewGroup[contains(@text, '%s')]", subject);
-       try {
-           AndroidDriverSingleton.getDriver().findElement(By.xpath(letterSubject)).isDisplayed();
-           return true;
-       }catch (NoSuchElementException e){
-           return false;
-       }
+        try {
+            AndroidDriverSingleton.getDriver().findElement(By.xpath(letterSubject)).isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
 
     }
 
-    public boolean isOneNewLetterDisplayed(){
+    public boolean isOneNewLetterDisplayed() {
         return AndroidDriverSingleton.getDriver().findElement(By.xpath("//*[contains(@content-desc,'Mail, 1')]")).isDisplayed();
     }
 
-    public void clickLetter(String subject){
+    public void clickLetter(String subject) {
         String letterSubject = String.format("//android.view.ViewGroup[contains(@text, '%s')]", subject);
         AndroidDriverSingleton.getDriver().findElement(By.xpath(letterSubject)).click();
         System.out.println("heelo");

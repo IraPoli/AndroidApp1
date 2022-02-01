@@ -2,7 +2,6 @@ package pageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Test;
 
 
 public class InitialPage extends BasePO {
@@ -17,17 +16,17 @@ public class InitialPage extends BasePO {
     @FindBy(id = "next_button")
     private WebElement gotItBIN;
 
-    public InitialPage clickGoItBIN(){
+    public InitialPage clickGoItBIN() {
         goItGmailBIN.click();
         return this;
     }
 
-    public InitialPage clickTakeMeToGmailBIN(){
+    public InitialPage clickTakeMeToGmailBIN() {
         takeMeToGmailBIN.click();
         return this;
     }
 
-    public InitialPage clickGotItBIN(){
+    public InitialPage clickGotItBIN() {
         gotItBIN.click();
         return this;
     }
